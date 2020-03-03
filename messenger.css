@@ -1,0 +1,39 @@
+body {
+    margin: 0 0 100px 0;
+    font-family: sans-serif;
+}
+form {
+    position: fixed;
+    bottom: 0;
+    height: 100px;
+    width: 100vw;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: #B4DCAD;
+    border-top: 2px solid #33A020;
+}
+input {
+    border-radius: 5px;
+    border: 2px solid #33A020;
+    padding: 10px;
+    margin: 0 5px;
+    width: 150px;
+}
+input[name=message] {
+    flex-grow: 1;
+}
+input[type=submit] {
+    background: #33A020;
+    color: #ffffff;
+    width: 100px;
+}
+.message {
+    width: 100vw;
+    padding: 10px 30px;
+    color: #004225;
+}
+.message:nth-child(odd){
+    background: #B4DCAD;
+}
