@@ -11,29 +11,28 @@ form {
     display: flex;
     align-items: center;
     padding: 20px;
-    background: #B4DCAD;
-    border-top: 2px solid #33A020;
+    background: #b4dcad;
+    border-top: 2px solid #33a020;
 }
 input {
     border-radius: 5px;
-    border: 2px solid #33A020;
+    border: 2px solid #33a020;
     padding: 10px;
     margin: 0 5px;
     width: 150px;
 }
-input[name=message] {
+input[name="message"] {
     flex-grow: 1;
 }
-input[type=submit] {
-    background: #33A020;
+input[type="submit"] {
+    background: #33a020;
     color: #ffffff;
     width: 100px;
 }
 .message {
-    width: 100vw;
     padding: 10px 30px;
     color: #004225;
 }
-.message:nth-child(odd){
-    background: #B4DCAD;
+.message:nth-child(odd) {
+    background: #b4dcad;
 }
