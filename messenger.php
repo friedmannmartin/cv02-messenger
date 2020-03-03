@@ -9,14 +9,15 @@
 <body onload="window.scrollTo(0,document.body.scrollHeight);">
     <?php
         if (!empty($_REQUEST['date']) && !empty($_REQUEST['name']) && !empty($_REQUEST['message'])){
-            $message = $_REQUEST['date'] . '•' . $_REQUEST['name'] . '•' . $_REQUEST['email'] . '•' . $_REQUEST['message'] . "\n";
-            file_put_contents(__DIR__.'/messages.txt', $message, FILE_APPEND);
+            $message = addslashes($_REQUEST['message']);
+            $row = $_REQUEST['date'] . ',' . $_REQUEST['name'] . ',' . $_REQUEST['email'] . ',' . $message . "\n";
+            file_put_contents(__DIR__.'/messages.txt', $row, FILE_APPEND);
         }
 
         $messages = explode("\n", htmlspecialchars(file_get_contents(__DIR__.'/messages.txt')));
         array_pop($messages);
         foreach($messages as $message){
-            $msg = explode("•", $message);
+            $msg = str_getcsv($message);
 
             echo "<div class='message'> $msg[0] <b>$msg[1]</b>";
             if($msg[2]==""){
